@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endesa - Poupe na sua Fatura</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Endesa</h1>
+        <p>Mude para a Endesa e <strong>poupe na sua fatura de energia</strong></p>
+    </header>
+    
+    <section class="oferta">
+        <h2>🎉 70€ de oferta na sua primeira fatura com a Endesa! 🎉</h2>
+    </section>
+    
+    <section class="simulador">
+        <h2>💰 Simulador de Poupança</h2>
+        <label for="fatura">Valor médio da sua fatura (€):</label>
+        <input type="number" id="fatura" value="100">
+        <button onclick="calcularPoupanca()">Calcular</button>
+        <p id="resultado">⚡ Com a Endesa, pode poupar aproximadamente 30.00€ na sua fatura!</p>
+    </section>
+    
+    <section class="formulario">
+        <h2>📢 Formulário de Contacto</h2>
+        <form id="contactForm">
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="tel" name="telefone" placeholder="Telefone" required>
+            <input type="text" name="morada" placeholder="Morada" required>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    
+    <button id="chatbotBtn" onclick="toggleChatbot()">💬 Assistente Virtual</button>
+    
+    <div id="chatbot" class="chatbot">
+        <h2>💡 Assistente Virtual</h2>
+        <div id="chatbox"></div>
+        <input type="text" id="userInput" placeholder="Escreva sua pergunta...">
+        <button onclick="enviarMensagem()">Enviar</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
