@@ -11,49 +11,46 @@
             margin: 0;
             padding: 0;
             text-align: center;
-        }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
+            background-color: #f4f4f4;
         }
         .banner {
-            background: linear-gradient(to right, #007bff, #00c6ff);
+            background: linear-gradient(135deg, #007bff, #0056b3);
             color: white;
             padding: 20px;
         }
-        .vantagens-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        .banner h2 {
+            font-size: 24px;
         }
-        .vantagem {
-            flex: 1 1 300px;
-            margin: 10px;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .highlight {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffd700;
+            background: #000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
         }
-        .form-container, .simulador {
-            max-width: 500px;
+        .container {
+            max-width: 600px;
             margin: 20px auto;
+            background: white;
             padding: 20px;
-            background: #f9f9f9;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         input, button {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border-radius: 5px;
             border: 1px solid #ccc;
+            border-radius: 5px;
         }
         button {
             background: #007bff;
             color: white;
+            border: none;
             cursor: pointer;
+            font-size: 16px;
         }
         button:hover {
             background: #0056b3;
@@ -61,41 +58,22 @@
     </style>
 </head>
 <body>
-    <header class="banner">
-        <h1>Endesa</h1>
-        <p>🎉 70€ de Oferta na sua Primeira Fatura com a Endesa! 🎉</p>
-        <a href="#contacto" class="btn">Aderir Agora</a>
-        <a href="#simulador" class="btn-light">Simular Poupança</a>
-    </header>
 
-    <section class="container">
-        <h2>Por que escolher a Endesa?</h2>
-        <div class="vantagens-container">
-            <div class="vantagem">
-                <h3>💳 Tarifas Competitivas</h3>
-                <p>Os melhores preços do mercado com planos adaptados ao seu consumo.</p>
-            </div>
-            <div class="vantagem">
-                <h3>🎧 Atendimento ao Cliente</h3>
-                <p>Suporte dedicado em múltiplos canais para esclarecer todas as dúvidas.</p>
-            </div>
-            <div class="vantagem">
-                <h3>🌱 Energia Verde</h3>
-                <p>Compromisso com a sustentabilidade e o futuro do planeta.</p>
-            </div>
-        </div>
-    </section>
+    <div class="banner">
+        <h2>🎉 <span class="highlight">70€ de Oferta</span> na sua Primeira Fatura com a Endesa! 🎉</h2>
+        <p>Mude para a Endesa e comece a poupar na sua fatura de energia!</p>
+    </div>
 
-    <section id="simulador" class="simulador">
+    <div class="container">
         <h2>💰 Simulador de Poupança</h2>
         <p>Descubra quanto pode poupar ao mudar para a Endesa.</p>
         <label for="fatura">Valor médio da sua fatura (€):</label>
         <input type="number" id="fatura" placeholder="Insira o valor">
         <button onclick="calcularPoupanca()">Calcular</button>
         <p id="resultado"></p>
-    </section>
+    </div>
 
-    <section id="contacto" class="form-container">
+    <div class="container">
         <h2>📩 Formulário de Contacto</h2>
         <form action="https://formspree.io/f/mvgzeywa" method="POST">
             <input type="text" name="nome" placeholder="Nome" required>
@@ -103,13 +81,13 @@
             <input type="text" name="morada" placeholder="Morada" required>
             <button type="submit">Enviar</button>
         </form>
-    </section>
+    </div>
 
     <script>
         function calcularPoupanca() {
-            let valor = document.getElementById('fatura').value;
-            let poupanca = valor * 0.3; // 30% de desconto médio
-            document.getElementById('resultado').innerText = `⚡ Com a Endesa, pode poupar aproximadamente ${poupanca.toFixed(2)}€ na sua fatura!`;
+            let valor = document.getElementById("fatura").value;
+            let poupanca = valor * 0.3;
+            document.getElementById("resultado").innerText = `⚡ Com a Endesa, pode poupar aproximadamente ${poupanca.toFixed(2)}€ na sua fatura!`;
         }
     </script>
 </body>
