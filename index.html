@@ -5,28 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Endesa - Poupe na sua Fatura</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .banner {
+            background: linear-gradient(to right, #007bff, #00c6ff);
+            color: white;
+            padding: 20px;
+        }
+        .vantagens-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .vantagem {
+            flex: 1 1 300px;
+            margin: 10px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .form-container, .simulador {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>🔵 Endesa</h1>
-        <nav>
-            <ul>
-                <li><a href="#simulador">Simulador</a></li>
-                <li><a href="#vantagens">Vantagens</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section class="banner">
-        <h2>🎉 70€ de Oferta na sua Primeira Fatura com a Endesa! 🎉</h2>
-        <p>Mude para a Endesa e comece a poupar na sua fatura de energia!</p>
+    <header class="banner">
+        <h1>Endesa</h1>
+        <p>🎉 70€ de Oferta na sua Primeira Fatura com a Endesa! 🎉</p>
         <a href="#contacto" class="btn">Aderir Agora</a>
         <a href="#simulador" class="btn-light">Simular Poupança</a>
-    </section>
-    
-    <section id="vantagens">
+    </header>
+
+    <section class="container">
         <h2>Por que escolher a Endesa?</h2>
         <div class="vantagens-container">
             <div class="vantagem">
@@ -43,8 +85,8 @@
             </div>
         </div>
     </section>
-    
-    <section id="simulador">
+
+    <section id="simulador" class="simulador">
         <h2>💰 Simulador de Poupança</h2>
         <p>Descubra quanto pode poupar ao mudar para a Endesa.</p>
         <label for="fatura">Valor médio da sua fatura (€):</label>
@@ -52,8 +94,8 @@
         <button onclick="calcularPoupanca()">Calcular</button>
         <p id="resultado"></p>
     </section>
-    
-    <section id="contacto">
+
+    <section id="contacto" class="form-container">
         <h2>📩 Formulário de Contacto</h2>
         <form action="https://formspree.io/f/mvgzeywa" method="POST">
             <input type="text" name="nome" placeholder="Nome" required>
@@ -63,14 +105,12 @@
         </form>
     </section>
 
-    <div id="chatbot">
-        <button id="chatbotBtn">💬 Assistente Virtual</button>
-        <div id="chatbotContainer" class="hidden">
-            <h3>💡 Assistente Virtual</h3>
-            <div id="chatMessages"></div>
-            <input type="text" id="chatInput" placeholder="Escreva sua pergunta...">
-            <button onclick="enviarMensagem()">Enviar</button>
-        </div>
-    </div>
+    <script>
+        function calcularPoupanca() {
+            let valor = document.getElementById('fatura').value;
+            let poupanca = valor * 0.3; // 30% de desconto médio
+            document.getElementById('resultado').innerText = `⚡ Com a Endesa, pode poupar aproximadamente ${poupanca.toFixed(2)}€ na sua fatura!`;
+        }
+    </script>
 </body>
 </html>
