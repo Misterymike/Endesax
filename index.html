@@ -48,14 +48,14 @@
         <h2>💰 Simulador de Poupança</h2>
         <p>Descubra quanto pode poupar ao mudar para a Endesa.</p>
         <label for="fatura">Valor médio da sua fatura (€):</label>
-        <input type="number" id="fatura" placeholder="Insira o valor">
+        <input type="number" id="fatura" placeholder="Insira o valor" required>
         <button onclick="calcularPoupanca()">Calcular</button>
         <p id="resultado"></p>
     </section>
 
     <section id="contacto">
         <h2>📩 Formulário de Contacto</h2>
-        <form id="contactForm" action="https://formspree.io/f/mvgzeywa" method="POST">
+        <form action="https://formspree.io/f/mvgzeywa" method="POST">
             <input type="text" name="nome" placeholder="Nome" required>
             <input type="tel" name="telefone" placeholder="Telefone" required>
             <input type="text" name="morada" placeholder="Morada" required>
