@@ -7,42 +7,73 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
-        <h1>Endesa</h1>
-        <p>Mude para a Endesa e <strong>poupe na sua fatura de energia</strong></p>
+        <h1>🔵 endesa</h1>
+        <nav>
+            <ul>
+                <li><a href="#simulador">Simulador</a></li>
+                <li><a href="#vantagens">Vantagens</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
-    
-    <section class="oferta">
-        <h2>🎉 70€ de oferta na sua primeira fatura com a Endesa! 🎉</h2>
+
+    <section class="banner">
+        <h2>🎉 70€ de Oferta na sua Primeira Fatura com a Endesa! 🎉</h2>
+        <p>Mude para a Endesa e comece a poupar na sua fatura de energia!</p>
+        <a href="#contacto" class="btn">Aderir Agora</a>
+        <a href="#simulador" class="btn-light">Simular Poupança</a>
     </section>
-    
-    <section class="simulador">
+
+    <section id="vantagens">
+        <h2>Por que escolher a Endesa?</h2>
+        <div class="vantagens-container">
+            <div class="vantagem">
+                <h3>💳 Tarifas Competitivas</h3>
+                <p>Os melhores preços do mercado com planos adaptados ao seu consumo.</p>
+            </div>
+            <div class="vantagem">
+                <h3>🎧 Atendimento ao Cliente</h3>
+                <p>Suporte dedicado em múltiplos canais para esclarecer todas as dúvidas.</p>
+            </div>
+            <div class="vantagem">
+                <h3>🌱 Energia Verde</h3>
+                <p>Compromisso com a sustentabilidade e o futuro do planeta.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="simulador">
         <h2>💰 Simulador de Poupança</h2>
+        <p>Descubra quanto pode poupar ao mudar para a Endesa.</p>
         <label for="fatura">Valor médio da sua fatura (€):</label>
-        <input type="number" id="fatura" value="100">
+        <input type="number" id="fatura" placeholder="Insira o valor">
         <button onclick="calcularPoupanca()">Calcular</button>
-        <p id="resultado">⚡ Com a Endesa, pode poupar aproximadamente 30.00€ na sua fatura!</p>
+        <p id="resultado"></p>
     </section>
-    
-    <section class="formulario">
-        <h2>📢 Formulário de Contacto</h2>
+
+    <section id="contacto">
+        <h2>📩 Formulário de Contacto</h2>
         <form id="contactForm">
-            <input type="text" name="nome" placeholder="Nome" required>
-            <input type="tel" name="telefone" placeholder="Telefone" required>
-            <input type="text" name="morada" placeholder="Morada" required>
+            <input type="text" id="nome" placeholder="Nome" required>
+            <input type="tel" id="telefone" placeholder="Telefone" required>
+            <input type="text" id="morada" placeholder="Morada" required>
             <button type="submit">Enviar</button>
         </form>
     </section>
-    
-    <button id="chatbotBtn" onclick="toggleChatbot()">💬 Assistente Virtual</button>
-    
-    <div id="chatbot" class="chatbot">
-        <h2>💡 Assistente Virtual</h2>
-        <div id="chatbox"></div>
-        <input type="text" id="userInput" placeholder="Escreva sua pergunta...">
-        <button onclick="enviarMensagem()">Enviar</button>
+
+    <div id="chatbot">
+        <button id="chatbotBtn">💬 Assistente Virtual</button>
+        <div id="chatbotContainer" class="hidden">
+            <h3>💡 Assistente Virtual</h3>
+            <div id="chatMessages"></div>
+            <input type="text" id="chatInput" placeholder="Escreva sua pergunta...">
+            <button onclick="enviarMensagem()">Enviar</button>
+        </div>
     </div>
-    
+
     <script src="script.js"></script>
+
 </body>
 </html>
